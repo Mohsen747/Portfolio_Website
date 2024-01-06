@@ -16,4 +16,3 @@ jobs:
       - name: Deploy to main branch
         run: |
           echo "Deploying static website..."
-          # Add any additional build or deployment steps here if needed.
