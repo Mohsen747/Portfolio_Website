@@ -13,13 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Use Node.js 16
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
       - name: Deploy to main branch
         run: |
-          git add .
-          git commit -m "Deploy to main branch"
-          git push
+          echo "Deploying static website..."
+          # Add any additional build or deployment steps here if needed.
