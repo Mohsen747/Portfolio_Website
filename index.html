@@ -730,6 +730,37 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <!-- Add this script at the end of your HTML body or in the head section -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Check if localStorage is supported
+        if (typeof(Storage) !== "undefined") {
+            // Retrieve the current visitor count from localStorage
+            var visitorCount = localStorage.getItem("visitorCount");
+
+            // Check if the visitorCount is null (first-time visitor)
+            if (visitorCount === null) {
+                visitorCount = 0;
+            } else {
+                // Convert the stored value to an integer
+                visitorCount = parseInt(visitorCount);
+            }
+
+            // Increment the visitor count
+            visitorCount++;
+
+            // Save the updated visitor count back to localStorage
+            localStorage.setItem("visitorCount", visitorCount);
+
+            // Display the visitor count on the webpage
+            document.getElementById("visitorCount").innerText = visitorCount;
+        } else {
+            // If localStorage is not supported, display an error message
+            console.error("LocalStorage is not supported. Visitor count may not be accurate.");
+        }
+    });
+</script>
+
 </body>
 
 </html>
